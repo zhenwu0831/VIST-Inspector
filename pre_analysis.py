@@ -11,13 +11,6 @@ nlp = spacy.load("en_core_web_sm")
 
 stop_words = STOP_WORDS
 
-# Pre-processing function
-def pre_process(text):
-    # Parse the text with spaCy
-    doc = nlp(text)
-    tokens = [token.lemma_.lower() for token in doc if token.is_alpha and not token.is_stop]
-    return tokens
-
 # Feature extraction function
 def extract_nlp_features(text):
     # Process the text with spaCy. This includes tokenization, lemmatization, POS tagging, and NER
